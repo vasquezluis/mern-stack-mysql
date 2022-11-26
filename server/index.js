@@ -7,6 +7,7 @@ import { PORT } from "./config.js";
 
 const app = express();
 app.use(morgan('dev'))
+app.use(express.json())
 
 app.use(indexRoutes);
 app.use(tasksRoutes);
