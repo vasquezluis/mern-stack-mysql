@@ -9,9 +9,9 @@ import {
 
 const router = Router();
 
-router.get("/tasks", getTask);
+router.get("/tasks", getTasks);
 
-router.get("/tasks/:id", getTasks);
+router.get("/tasks/:id", getTask);
 
 router.post("/tasks", createTask);
 
