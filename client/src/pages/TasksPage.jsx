@@ -15,14 +15,17 @@ function TasksPage() {
     loadTasks();
   }, []);
 
+  // crear task card desde TaskCard y enviarle como parametro el task que se esta recorriendo
+  function renderMain() {
+    if(tasks.length === 0) return <h1>Not tasks yet</h1>
+    return tasks.map((task) => <TaskCard task={task} key={task.id} />);
+  }
+
   return (
     <div>
       <h1>Tasks</h1>
-      // recorrer setTasks (variable cond ata)
-      {tasks.map((task) => (
-        // crear task card desde TaskCard y enviarle como parametro el task que se esta recorriendo
-        <TaskCard task={task} key={task.id} />
-      ))}
+      {/* recorrer setTasks (variable con data) */}
+      {renderMain()}
     </div>
   );
 }
